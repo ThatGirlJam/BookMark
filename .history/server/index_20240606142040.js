@@ -1,6 +1,7 @@
 //index.js
 // Load environment variables
 require("dotenv").config();
+console.log(process.env.ATLAS_URI);
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -15,6 +16,6 @@ app.get("/", (req, res) => {
 
 //Used to start the server and listen for requests on a specific port
 //Since React runs on 3000 by default, we use 8080 here
-app.listen(process.env.PORT, () => {
-  console.log(`server listening on port ${process.env.PORT}`);
+app.listen(8080, () => {
+  console.log("server listening on port 8080");
 });
