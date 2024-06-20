@@ -1,11 +1,17 @@
-//index.js
+//index.mjs
 // Load environment variables
-require("dotenv").config();
-const express = require("express");
+import dotenv from "dotenv";
+import express from "express";
+import cors from "cors";
+
+dotenv.config();
+
 const app = express();
-const cors = require("cors");
 
 app.use(cors());
+
+app.use("/posts", posts);
+// Load the /posts routes
 
 //Adding a route, where we use Express app to listen for a
 //get request at the path '/' which is root or homepage
